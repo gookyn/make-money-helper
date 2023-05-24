@@ -12,9 +12,9 @@ const getMsg = new Promise((resolve, reject) => {
         const tomorrowWorkTime =
           arr.filter(item => item.date === tomorrow.format('YYYY-MM-DD'))[0] ||
           {};
-        const { start = '', end = '' } = tomorrowWorkTime;
+        const { start = '', end = '', remind = '' } = tomorrowWorkTime;
 
-        let msg = `Tomorrow is ${tomorrow.format('MMM')} ${tomorrow.format(
+        let msg = `Tomorrow: ${tomorrow.format('MMM')} ${tomorrow.format(
           'DD'
         )}.\n`;
 
@@ -26,6 +26,11 @@ const getMsg = new Promise((resolve, reject) => {
             +end
           )}\nWill get $${per * duration}+++💰`;
         }
+
+        if (remind) {
+          msg += `\n${remind}`;
+        }
+
         resolve({
           msg,
         });
