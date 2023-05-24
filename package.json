@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "send": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "build": "del-cli ./output -f && gulp",
+    "deploy": "node ./output/index.js"
   },
   "author": "gookyn",
   "license": "ISC",
@@ -14,5 +16,13 @@
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "node-schedule": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "del-cli": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-uglify": "^3.0.2"
   }
 }

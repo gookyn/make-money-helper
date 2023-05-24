@@ -10,6 +10,8 @@ COPY ["package.json", "yarn.lock*", "./"]
 
 RUN yarn
 
-COPY . .
+RUN yarn build
 
-CMD ["node", "src/index.js"]
+COPY ["package.json", "yarn.lock*", "output/", "files/", "./"]
+
+CMD ["node", "output/index.js"]
