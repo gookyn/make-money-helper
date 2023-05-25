@@ -1,10 +1,11 @@
 const dayjs = require('dayjs');
 const csvtojson = require('csvtojson');
-const tomorrow = dayjs().add(1, 'day');
-const filePath = `./files/${tomorrow.format('YYYYMM')}.csv`;
-const per = 24;
 
 const getMsg = new Promise((resolve, reject) => {
+  const tomorrow = dayjs().add(1, 'day');
+  const filePath = `./files/${tomorrow.format('YYYYMM')}.csv`;
+  const per = 24;
+
   csvtojson()
     .fromFile(filePath) // relative path
     .then(arr => {
