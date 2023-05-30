@@ -5,7 +5,7 @@ const { getMsg } = require('./get-msg');
 schedule.scheduleJob('0 0 18 * * *', sendMsg);
 
 function sendMsg() {
-  getMsg
+  getMsg()
     .then(res => {
       axios
         .post(
