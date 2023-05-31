@@ -23,4 +23,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/make-money-helper:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/schedule-bot:latest
