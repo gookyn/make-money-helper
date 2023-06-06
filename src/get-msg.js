@@ -20,19 +20,19 @@ function getMsg() {
 
           let msg = `Tomorrow: ${tomorrow.format('MMM')} ${tomorrow.format(
             'DD'
-          )}.\n`;
-
-          if (!start || !end) {
-            msg += `Have a good rest 💤`;
-          } else {
-            const duration = +end - +start;
-            msg += `Time to make money: ${getTimeText(+start)} - ${getTimeText(
-              +end
-            )}\nWill get $${per * duration}+++💰`;
-          }
+          )}\n`;
 
           if (remind) {
-            msg += `\n${remind}`;
+            msg += remind;
+          } else {
+            if (!start || !end) {
+              msg += `Have a good rest 💤`;
+            } else {
+              const duration = +end - +start;
+              msg += `Time to make money: ${getTimeText(
+                +start
+              )} - ${getTimeText(+end)}\nWill get $${per * duration}+++💰`;
+            }
           }
 
           resolve({
